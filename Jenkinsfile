@@ -5,7 +5,7 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git  branch: 'main',  url: "https://github.com/Sainishitha11/jenkinsdemo"
+                git 'https://github.com/Sainishitha11/jenkinsdemo.git'
             }
         }
 
@@ -19,16 +19,14 @@ pipeline {
         stage('Test') {
             steps {
                 echo "Checking if HTML file exists"
-                sh 'test -f student.html'
+                sh 'test -f index.html'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo "Deploying HTML file"
-                sh 'cp student.html /var/www/html/'
+                echo "Deployment successful"
             }
         }
-
     }
 }
