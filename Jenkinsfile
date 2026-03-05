@@ -5,7 +5,7 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/Sainishitha11/jenkinsdemo.git'
+                git branch: "main", utl: 'https://github.com/Sainishitha11/jenkinsdemo.git'
             }
         }
 
