@@ -1,0 +1,34 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout Code') {
+            steps {
+                git 'https://github.com/your-username/your-repository.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo "Building the project..."
+                sh 'ls -l'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo "Checking if HTML file exists"
+                sh 'test -f student.html'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo "Deploying HTML file"
+                sh 'cp student.html /var/www/html/'
+            }
+        }
+
+    }
+}
